@@ -130,8 +130,10 @@ This exercise demonstrates practical experience with:
 
 ## Evidence artifacts
 
-- [Redacted IAM policy screenshot](hti-s3-readonly-policy-redacted.png)
-- [Redacted denied-upload CLI screenshot](hti-s3-putobject-denied-redacted.png)
+The redacted policy and denied-upload screenshots are prepared locally but have not yet been added to this repository. Add them to this folder once uploaded:
+
+- `hti-s3-readonly-policy-redacted.png`
+- `hti-s3-putobject-denied-redacted.png`
 
 ## Author
 
