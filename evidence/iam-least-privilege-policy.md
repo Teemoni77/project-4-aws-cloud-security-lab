@@ -130,10 +130,12 @@ This exercise demonstrates practical experience with:
 
 ## Evidence artifacts
 
-The redacted policy and denied-upload screenshots are prepared locally but have not yet been added to this repository. Add them to this folder once uploaded:
+The following redacted screenshots are included in this repository and support the practical test results:
 
-- `hti-s3-readonly-policy-redacted.png`
-- `hti-s3-putobject-denied-redacted.png`
+- [`hti-s3-readonly-policy-redacted.png`](hti-s3-readonly-policy-redacted.png) — read-only IAM policy evidence.
+- [`hti-s3-putobject-denied-redacted.png`](hti-s3-putobject-denied-redacted.png) — AWS CLI evidence showing the attempted upload was denied.
+
+Sensitive account identifiers and unnecessary details have been redacted from the screenshots.
 
 ## Author
 
