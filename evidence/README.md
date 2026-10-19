@@ -15,6 +15,6 @@ This directory contains selected screenshots supporting the AWS Cloud Security L
 - Default server-side encryption using SSE-S3
 - Bucket versioning configuration
 
-Screenshots are selected to demonstrate the observed configurations and results. Sensitive credentials, secret keys, session tokens, and unnecessary personal information must not be published.
+Screenshots are selected to demonstrate the observed configurations and results. Sensitive credentials, secret keys, session tokens, account identifiers, and unnecessary personal information must not be published.
 
-See [`iam-least-privilege-policy.md`](../iam-least-privilege-policy.md) for the test procedure and results.
+See [`iam-least-privilege-policy.md`](iam-least-privilege-policy.md) for the test procedure and results.
