@@ -42,6 +42,8 @@ The temporary test access key and IAM user were deleted after testing. CloudTrai
 
 These are separate evidence sources: the CLI results establish the observed S3 permission behavior, while the reviewed CloudTrail records establish the corresponding IAM management activity.
 
+**Detailed report:** [IAM least-privilege policy testing and CloudTrail audit](evidence/iam-least-privilege-policy.md)
+
 ## Security Controls Observed
 
 - S3 Block Public Access enabled.
@@ -52,10 +54,9 @@ These are separate evidence sources: the CLI results establish the observed S3 p
 
 ## Repository Structure
 
-Planned documentation:
-
 - `README.md` — project overview, scope, and progress.
-- `iam-least-privilege-policy.md` — policy configuration, test results, CloudTrail observations, and cleanup notes.
+- `evidence/README.md` — index of evidence and publication guidance.
+- `evidence/iam-least-privilege-policy.md` — redacted policy configuration, test results, CloudTrail observations, and cleanup notes.
 - `evidence/` — selected screenshots or sanitized evidence, where appropriate.
 
 ## Scope and Limitations
@@ -69,4 +70,3 @@ Further exercises will expand the lab to cloud logging, monitoring, identity sec
 Taiwo Ibrahim
 
 Cybersecurity | Cloud Security | Security Operations
-
