@@ -74,6 +74,6 @@ Further exercises will expand the lab to cloud logging, monitoring, identity sec
 
 ## Author
 
-Taiwo Ibrahim
+Taiwo H Ibrahim
 
 Cybersecurity | Cloud Security | Security Operations
