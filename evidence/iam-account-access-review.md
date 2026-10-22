@@ -85,6 +85,6 @@ This review demonstrates my practical experience with:
 
 ## Author
 
-**Taiwo Ibrahim**
+**Taiwo H Ibrahim**
 
 Cybersecurity | Cloud Security | Security Operations
