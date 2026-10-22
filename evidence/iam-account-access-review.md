@@ -2,11 +2,11 @@
 
 ## 1. Objective
 
-Review the account-access role and selected AWS CloudTrail console sign-in records as part of the Project 4 cloud security lab. The purpose is to document the observed configuration, assess what the available evidence supports, and identify sensible follow-up actions without changing AWS-managed access configuration.
+Review the account-access role and selected AWS CloudTrail console sign-in records as part of my Project 4 cloud security lab. The purpose is to document the observed configuration, assess what the available evidence supports, and identify sensible follow-up actions without changing AWS-managed access configuration.
 
 ## 2. Scope and evidence reviewed
 
-The review used the AWS Console screenshots and CloudTrail event records inspected during this lab session, including:
+This review uses the AWS Console screenshots and CloudTrail event records I inspected during this lab session, including:
 
 - The `AccountFullAccessRole` summary, permissions, and trust relationship.
 - The AWS-managed `AdministratorAccess` policy attached to the role.
@@ -19,7 +19,7 @@ This is a focused review of the evidence available during the session, not a com
 
 ### 3.1 Account access role
 
-The account uses an AWS-managed role named `AccountFullAccessRole`. The role's displayed permissions include the AWS-managed `AdministratorAccess` policy, which grants broad access to AWS services and resources. The role trust relationship shown in the console allows the AWS service principal `account-access.amazonaws.com` to call `sts:AssumeRole` and `sts:SetContext`.
+My AWS account access uses an AWS-managed role named `AccountFullAccessRole`. The role's displayed permissions include the AWS-managed `AdministratorAccess` policy, which grants broad access to AWS services and resources. The role trust relationship shown in the console allows the AWS service principal `account-access.amazonaws.com` to call `sts:AssumeRole` and `sts:SetContext`.
 
 This configuration is consistent with the observed AWS-managed, Builder ID-mediated account access flow. The role is not a normal IAM user, and the lab should not attempt to delete it or casually change its permissions or trust policy.
 
@@ -32,9 +32,9 @@ The reviewed CloudTrail `ConsoleLogin` records showed:
 - The `MFAUsed` field recorded as `No` in the displayed console-login events.
 - The session context showed `mfaAuthenticated: false`.
 
-These fields describe the recorded session and event context. On their own, they do not prove that an attacker signed in or that the configured authenticator method was bypassed. During the investigation, the user reported that an authenticator app was listed as an active MFA method and that a fresh sign-in after fully signing out prompted for MFA. Existing Builder ID or browser sessions may explain why some returns to the console did not prompt again, but that explanation has not been independently established from these records.
+These fields describe the recorded session and event context. On their own, they do not prove that an attacker signed in or that my configured authenticator method was bypassed. I confirmed that an authenticator app was listed as an active MFA method and that, after I fully signed out and signed back in, I was prompted for MFA. I commonly leave my Builder ID signed in, and the console has sometimes let me return without another MFA prompt. Existing Builder ID or browser sessions may explain this behavior, but that explanation has not been independently established from these records.
 
-The user recognized the reviewed sign-in times as falling within a period when they were active. This is useful context, but it is not independent proof of who initiated each event.
+The sign-in times I reviewed fell within a period when I was active, and I consider it possible that the events were mine. However, timing alone does not independently prove who initiated each event.
 
 ### 3.3 Region and event interpretation
 
@@ -52,12 +52,12 @@ The broad permissions on `AccountFullAccessRole` make it important to protect th
 
 The `MFAUsed: No` and `mfaAuthenticated: false` fields deserve documentation and continued verification, but they should not be described as proof of MFA failure given the observed Builder ID flow and the successful MFA prompt during a fresh sign-in.
 
-No conclusion is drawn that the account was compromised or that it was definitively uncompromised.
+I cannot conclude from the available evidence either that my account was compromised or that it was definitively uncompromised.
 
 ## 5. Recommended follow-up
 
 1. Keep the authenticator-app MFA method enabled and confirm that a genuinely fresh authentication requires the expected MFA challenge.
-2. Continue reviewing successful and failed `ConsoleLogin` events across relevant regions, comparing timestamps and source addresses with the user's known activity. An IP address is contextual evidence, not proof of identity.
+2. Continue reviewing successful and failed `ConsoleLogin` events across relevant regions, comparing timestamps and source addresses with my known activity. An IP address is contextual evidence, not proof of identity.
 3. Review CloudTrail for unexpected IAM, STS, S3, networking, compute, and billing-related management events. Investigate any event that cannot be explained by known lab activity.
 4. Continue monitoring billing and resource inventory. Do not use unchanged credits or zero cost as the sole basis for deciding whether access was legitimate.
 5. Do not modify or delete the AWS-managed `AccountFullAccessRole` as part of this exercise. If AWS Support clarifies the managed-role permission model, document that response before considering any access changes.
@@ -75,7 +75,7 @@ No conclusion is drawn that the account was compromised or that it was definitiv
 
 **Status: Documented — follow-up monitoring recommended.**
 
-This review demonstrates practical experience with:
+This review demonstrates my practical experience with:
 
 1. Inspecting AWS IAM role permissions and trust relationships.
 2. Interpreting CloudTrail console-login and assumed-role context.
