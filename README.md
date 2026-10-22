@@ -44,6 +44,12 @@ These are separate evidence sources: the CLI results establish the observed S3 p
 
 **Detailed report:** [IAM least-privilege policy testing and CloudTrail audit](evidence/iam-least-privilege-policy.md)
 
+## Account Access Review
+
+A focused review documented the AWS-managed `AccountFullAccessRole` configuration and selected Builder ID-associated `ConsoleLogin` records. The observed event fields include session-level MFA indicators that require careful interpretation; the reviewed evidence does not confirm compromise or definitively rule it out. The report records evidence limitations and safe follow-up checks without changing the AWS-managed role.
+
+**Detailed report:** [IAM account access review](evidence/iam-account-access-review.md)
+
 ## Security Controls Observed
 
 - S3 Block Public Access enabled.
@@ -57,11 +63,12 @@ These are separate evidence sources: the CLI results establish the observed S3 p
 - `README.md` — project overview, scope, and progress.
 - `evidence/README.md` — index of evidence and publication guidance.
 - `evidence/iam-least-privilege-policy.md` — redacted policy configuration, test results, CloudTrail observations, and cleanup notes.
+- `evidence/iam-account-access-review.md` — account-access role and selected console sign-in review, including limitations and follow-up actions.
 - `evidence/` — selected screenshots or sanitized evidence, where appropriate.
 
 ## Scope and Limitations
 
-This is a developing lab, not a production security assessment. The completed exercise validates the listed S3 actions under the tested IAM identity and policy configuration. It does not claim comprehensive testing of every possible access path or complete coverage of S3 data events in CloudTrail.
+This is a developing lab, not a production security assessment. The completed exercise validates the listed S3 actions under the tested IAM identity and policy configuration. It does not claim comprehensive testing of every possible access path or complete coverage of S3 data events in CloudTrail. The account-access review is limited to selected events and configuration screenshots; it is not a full incident-response investigation.
 
 Further exercises will expand the lab to cloud logging, monitoring, identity security, and detection and investigation workflows.
 
